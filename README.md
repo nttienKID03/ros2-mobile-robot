@@ -38,4 +38,4 @@ Gazebo + RViz
 ```bash
 colcon build
 source install/setup.bash
-ros2 launch robot_bringup bringup.launch.py
+ros2 launch mobile nav2.launch.py
