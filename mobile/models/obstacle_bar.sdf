@@ -1,0 +1,76 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="rail_barrier">
+    <static>true</static>
+
+    <!-- ===== TRỤ TRÁI ===== -->
+    <!-- <link name="pillar_left">
+      <pose>1.0 0.0 0.5 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.3 0.3 0.8</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.3 0.3 1.0</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+    </link> -->
+
+    <!-- ===== TRỤ PHẢI ===== -->
+    <!-- <link name="pillar_right">
+      <pose>-1.4 0 0.5 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.3 0.3 1.0</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.3 0.3 0.8</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.2 0.2 0.2 1</ambient>
+          <diffuse>0.2 0.2 0.2 1</diffuse>
+        </material>
+      </visual>
+    </link> -->
+
+    <!-- ===== THANH CHẮN NGANG ===== -->
+    <link name="bar">
+      <pose>0 0 0.5 0 0 0</pose>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>3.0 0.2 0.2</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>3.0 0.2 0.2</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>1 0 0 1</ambient>
+          <diffuse>1 0 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>

@@ -1,0 +1,1078 @@
+<?xml version="1.0"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="mobile" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link
+    name="base_footprint">
+    <inertial>
+      <origin
+        xyz="0.0014629 1.727E-07 0.20791"
+        rpy="0 0 0" />
+      <mass
+        value="16.209" />
+      <inertia
+        ixx="0.53081"
+        ixy="1.6778E-07"
+        ixz="0.00067055"
+        iyy="1.0663"
+        iyz="2.744E-07"
+        izz="1.3749" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/base_footprint.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/base_footprint.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.028887 4.6114E-05 0.4015"
+        rpy="0 0 0" />
+      <mass
+        value="38.511" />
+      <inertia
+        ixx="1.3307"
+        ixy="5.4581E-05"
+        ixz="-0.0022872"
+        iyy="1.9545"
+        iyz="-0.00017972"
+        izz="1.759" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="base_link_jn"
+    type="fixed">
+    <origin
+      xyz="0 0 0.105"
+      rpy="0 0 0" />
+    <parent
+      link="base_footprint" />
+    <child
+      link="base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 -4.7668E-05 -5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.2096" />
+      <inertia
+        ixx="0.0023434"
+        ixy="6.1896E-36"
+        ixz="1.6299E-36"
+        iyy="0.0040809"
+        iyz="1.2237E-17"
+        izz="0.0023434" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_jn"
+    type="continuous">
+    <origin
+      xyz="0 0.16297 -0.02"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      friction="0.15" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="0 -4.7668E-05 2.7756E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.2096" />
+      <inertia
+        ixx="0.0023434"
+        ixy="-3.2911E-20"
+        ixz="-2.9892E-19"
+        iyy="0.0040809"
+        iyz="-6.0004E-18"
+        izz="0.0023434" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_jn"
+    type="continuous">
+    <origin
+      xyz="0 -0.16297 -0.02"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      friction="0.15" />
+  </joint>
+  <link
+    name="laser">
+    <inertial>
+      <origin
+        xyz="-0.0010682 1.7798E-05 -0.018854"
+        rpy="0 0 0" />
+      <mass
+        value="0.0094944" />
+      <inertia
+        ixx="3.8153E-06"
+        ixy="3.0098E-11"
+        ixz="-8.0845E-10"
+        iyy="3.8141E-06"
+        iyz="-2.0344E-11"
+        izz="4.9345E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/laser.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.082353 0.082353 0.082353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/laser.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar"
+    type="fixed">
+    <origin
+      xyz="0.00086811 -1.7374E-05 0.2438"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="laser" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="imu">
+    <inertial>
+      <origin
+        xyz="-0.00014074 2.3807E-12 -0.013256"
+        rpy="0 0 0" />
+      <mass
+        value="0.26083" />
+      <inertia
+        ixx="3.4611E-05"
+        ixy="2.276E-14"
+        ixz="-1.8559E-07"
+        iyy="5.2869E-05"
+        iyz="-2.3713E-15"
+        izz="5.8033E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/imu.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/imu.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="mpu"
+    type="fixed">
+    <origin
+      xyz="0 0 0.0363"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="imu" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="truocphai_tren">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 -2.7756E-17 -0.022634"
+        rpy="0 0 0" />
+      <mass
+        value="0.065037" />
+      <inertia
+        ixx="4.2933E-05"
+        ixy="3.6181E-06"
+        ixz="-3.5063E-21"
+        iyy="3.7806E-05"
+        iyz="-7.6354E-21"
+        izz="3.2705E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/truocphai_tren.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/truocphai_tren.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="truocphai_tren_jn"
+    type="continuous">
+    <origin
+      xyz="0.25109 -0.1581 -0.01"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="truocphai_tren" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      friction="0" damping="0.003" />
+  </joint>
+  <link
+    name="truocphai_duoi">
+    <inertial>
+      <origin
+        xyz="-1.1102E-16 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.14196" />
+      <inertia
+        ixx="6.492E-05"
+        ixy="-1.0211E-05"
+        ixz="3.1623E-20"
+        iyy="7.939E-05"
+        iyz="-6.4409E-20"
+        izz="5.964E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/truocphai_duoi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/truocphai_duoi.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="truocphai_duoi_jn"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.06"
+      rpy="0 0 0" />
+    <parent
+      link="truocphai_tren" />
+    <child
+      link="truocphai_duoi" />
+    <axis
+      xyz="-0.45928 0.88829 0" />
+    <dynamics
+      friction="0" />
+  </joint>
+  <link
+    name="truoctrai_tren">
+    <inertial>
+      <origin
+        xyz="-4.4409E-16 -7.7716E-16 -0.022634"
+        rpy="0 0 0" />
+      <mass
+        value="0.065036" />
+      <inertia
+        ixx="3.8275E-05"
+        ixy="3.9078E-06"
+        ixz="-5.2238E-21"
+        iyy="4.2464E-05"
+        iyz="-2.6459E-20"
+        izz="3.2706E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/truoctrai_tren.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/truoctrai_tren.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="truoctrai_tren_jn"
+    type="continuous">
+    <origin
+      xyz="0.25092 0.16015 -0.01"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="truoctrai_tren" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      friction="0" damping="0.003" />
+  </joint>
+  <link
+    name="truoctrai_duoi">
+    <inertial>
+      <origin
+        xyz="-1.2212E-15 -1.1102E-16 -5.2736E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.14196" />
+      <inertia
+        ixx="7.8066E-05"
+        ixy="-1.103E-05"
+        ixz="4.3755E-20"
+        iyy="6.6243E-05"
+        iyz="-2.6508E-20"
+        izz="5.964E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/truoctrai_duoi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/truoctrai_duoi.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="truoctrai_duoi_jn"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.058"
+      rpy="0 0 0" />
+    <parent
+      link="truoctrai_tren" />
+    <child
+      link="truoctrai_duoi" />
+    <axis
+      xyz="-0.85802 0.51362 0" />
+    <dynamics
+      friction="0" />
+  </joint>
+  <link
+    name="traisau_tren">
+    <inertial>
+      <origin
+        xyz="3.3307E-16 5.5511E-17 -0.022634"
+        rpy="0 0 0" />
+      <mass
+        value="0.065037" />
+      <inertia
+        ixx="3.625E-05"
+        ixy="-1.6396E-06"
+        ixz="-9.4666E-21"
+        iyy="4.449E-05"
+        iyz="-3.2869E-20"
+        izz="3.2705E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/traisau_tren.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/traisau_tren.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="traisau_tren_jn"
+    type="continuous">
+    <origin
+      xyz="-0.25098 0.15995 -0.01"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="traisau_tren" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      friction="0" damping="0.003"/>
+  </joint>
+  <link
+    name="traisau_duoi">
+    <inertial>
+      <origin
+        xyz="4.996E-16 3.8858E-16 5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.14196" />
+      <inertia
+        ixx="8.3782E-05"
+        ixy="4.6277E-06"
+        ixz="-1.3101E-20"
+        iyy="6.0527E-05"
+        iyz="5.4442E-21"
+        izz="5.964E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/traisau_duoi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/traisau_duoi.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="traisau_duoi_jn"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.06"
+      rpy="0 0 0" />
+    <parent
+      link="traisau_tren" />
+    <child
+      link="traisau_duoi" />
+    <axis
+      xyz="-0.98212 -0.18826 0" />
+    <dynamics
+      friction="0" />
+  </joint>
+  <link
+    name="phaisau_tren">
+    <inertial>
+      <origin
+        xyz="0 1.8041E-15 -0.022634"
+        rpy="0 0 0" />
+      <mass
+        value="0.065037" />
+      <inertia
+        ixx="3.9992E-05"
+        ixy="-4.4182E-06"
+        ixz="2.8328E-21"
+        iyy="4.0747E-05"
+        iyz="-4.0305E-20"
+        izz="3.2705E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/phaisau_tren.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/phaisau_tren.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="phaisau_tren_jn"
+    type="continuous">
+    <origin
+      xyz="-0.25115 -0.1584 -0.01"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="phaisau_tren" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      friction="0" damping="0.003"/>
+  </joint>
+  <link
+    name="phaisau_duoi">
+    <inertial>
+      <origin
+        xyz="3.3307E-16 1.1935E-15 -6.1062E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.14196" />
+      <inertia
+        ixx="7.3221E-05"
+        ixy="1.2469E-05"
+        ixz="-5.6426E-20"
+        iyy="7.1089E-05"
+        iyz="-5.6934E-20"
+        izz="5.964E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/phaisau_duoi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/phaisau_duoi.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="phaisau_duoi_jn"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.058"
+      rpy="0 0 0" />
+    <parent
+      link="phaisau_tren" />
+    <child
+      link="phaisau_duoi" />
+    <axis
+      xyz="0.73661 0.67632 0" />
+    <dynamics
+      friction="0" />
+  </joint>
+  <link
+    name="cam_xa">
+    <inertial>
+      <origin
+        xyz="-0.28864 7.9562E-05 -0.43352"
+        rpy="0 0 0" />
+      <mass
+        value="0.2" />
+      <inertia
+        ixx="0.79986"
+        ixy="5.4413E-05"
+        ixz="-0.0029577"
+        iyy="0.88821"
+        iyz="-0.00018"
+        izz="0.3841" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/cam_xa.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/cam_xa.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cam_xa_jn"
+    type="fixed">
+    <origin
+      xyz="0.3375 0 1.0525"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="cam_xa" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link name="cam_xa_optical"/>
+  <joint name="cam_xa_optical_jn" type="fixed">
+    <parent link="cam_xa"/>
+    <child link="cam_xa_optical"/>
+    <origin
+      xyz="0 0 0"
+      rpy="-1.57079632679 0 -1.57079632679"/>
+  </joint>
+
+
+  <link
+    name="cam_gan">
+    <inertial>
+      <origin
+        xyz="0.0092073 7.7999E-05 -0.47601"
+        rpy="0 0 0" />
+      <mass
+        value="0.2" />
+      <inertia
+        ixx="0.66586"
+        ixy="0.00014781"
+        ixz="0.19433"
+        iyy="0.88821"
+        iyz="-0.00011623"
+        izz="0.5181" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/cam_gan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://mobile/meshes/cam_gan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="cam_gan_jn"
+    type="fixed">
+    <origin
+      xyz="0.31434 0 1.0142"
+      rpy="0 0.61087 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="cam_gan" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+   <!-- Gazebo plugin cho LiDAR -->
+  <gazebo reference="laser">
+    <sensor type="ray" name="laser_sensor">
+      <always_on>true</always_on>
+      <visualize>true</visualize>
+      <update_rate>50</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>720</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.15</min>
+          <max>40.0</max>
+          <resolution>0.01</resolution>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </range>
+      </ray>
+
+      <plugin name="gazebo_ros_laser" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <namespace>/</namespace>
+          <remapping>scan:=/scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>laser</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Gazebo plugin cho IMU -->
+  <gazebo reference="imu">
+    <sensor type="imu" name="imu_sensor">
+      <always_on>true</always_on>
+      <update_rate>50</update_rate>
+      <imu>
+        <angular_velocity>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.0002</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.0002</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.0002</stddev>
+            </noise>
+          </z>
+        </angular_velocity>
+        <linear_acceleration>
+          <x>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.0003</stddev>
+            </noise>
+          </x>
+          <y>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.0003</stddev>
+            </noise>
+          </y>
+          <z>
+            <noise type="gaussian">
+              <mean>0.0</mean>
+              <stddev>0.0003</stddev>
+            </noise>
+          </z>
+        </linear_acceleration>
+      </imu>
+
+      <!-- Đây là phần thiếu -->
+      <plugin name="gazebo_ros_imu" filename="libgazebo_ros_imu_sensor.so">
+        <ros>
+          <namespace>/</namespace>
+          <remapping>imu:=/imu</remapping>
+        </ros>
+        <frame_name>imu</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Gazebo plugin cho bộ điều khiển diff_drive -->
+  <gazebo>
+    <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace>/</namespace>
+        <remapping>cmd_vel:=/cmd_vel</remapping>
+        <remapping>odom:=/odom</remapping>
+        <parameter name="use_sim_time" type="bool" value="true"/>
+      </ros>
+
+      <update_rate>50</update_rate>
+      <left_joint>left_wheel_jn</left_joint>
+      <right_joint>right_wheel_jn</right_joint>
+
+      <wheel_separation>0.326</wheel_separation> <!-- Khoảng cách 2 bánh -->
+      <wheel_diameter>0.17</wheel_diameter>     <!-- Đường kính bánh -->
+      <wheel_acceleration>1.0</wheel_acceleration>
+      <wheel_torque>5.0</wheel_torque>
+
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>false</publish_odom_tf>
+      <publish_wheel_tf>false</publish_wheel_tf>
+    </plugin>
+  </gazebo>
+
+  <!-- <gazebo>
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <ros>
+        <namespace>/</namespace>
+        <remapping>joint_states:=/joint_states</remapping>
+      </ros>
+      <update_rate>50</update_rate>
+
+      <joint_name>base_link_jn</joint_name>
+      <joint_name>left_wheel_jn</joint_name>
+      <joint_name>right_wheel_jn</joint_name>
+      <joint_name>lidar</joint_name>
+      <joint_name>mpu</joint_name>
+      <joint_name>truocphai_tren_jn</joint_name>
+      <joint_name>truocphai_duoi_jn</joint_name>
+      <joint_name>truoctrai_tren_jn</joint_name>
+      <joint_name>truoctrai_duoi_jn</joint_name>
+      <joint_name>traisau_tren_jn</joint_name>
+      <joint_name>traisau_duoi_jn</joint_name>
+      <joint_name>phaisau_tren_jn</joint_name>
+      <joint_name>phaisau_duoi_jn</joint_name>
+    </plugin>
+  </gazebo> -->
+
+  <!-- Gazebo plugin cho Camera xa -->
+  <gazebo reference="cam_xa">
+    <sensor type="depth" name="cam_xa_sensor">
+      <always_on>true</always_on>
+      <update_rate>30</update_rate>
+      <!-- <visualize>false</visualize> -->
+
+      <camera>
+        <horizontal_fov>1.5708</horizontal_fov> <!-- 90 độ -->
+        <image>
+          <width>1280</width>
+          <height>720</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.4</near>
+          <far>2.0</far>
+        </clip>
+      </camera>
+
+      <plugin name="depth_camera" filename="libgazebo_ros_camera.so">
+        <ros>
+          <namespace>/cam_xa</namespace>
+
+          <remapping>image_raw:=/cam_xa/image_raw</remapping>
+          <remapping>camera_info:=/cam_xa/camera_info</remapping>
+
+        </ros>
+        <min_depth>0.1</min_depth>
+
+        <frame_name>cam_xa_optical</frame_name>
+        <depth_camera>true</depth_camera>
+      </plugin>
+      
+    </sensor>
+  </gazebo>
+
+
+</robot>

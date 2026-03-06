@@ -1,0 +1,33 @@
+<launch>
+  <arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find mobile)/urdf/mobile.urdf" />
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find mobile)/rviz/rviz.rviz" />
+  <node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" />
+
+  <!-- Thêm TF giữa base_link và linkphutren-->
+  <node name="tf_phutren" pkg="tf" type="static_transform_publisher" args="0.17256 -0.00008 -0.016  0 0 0  base_link linkphutren 40"/>
+
+  <!-- Thêm TF giữa linkphutren và linkphuduoi-->
+  <node name="tf_phuduoi" pkg="tf" type="static_transform_publisher" args="-0.00205 -0.00974 -0.0175  0 0 0  linkphutren linkphuduoi 40"/>
+
+  <!-- Thêm TF giữa base_link và left
+  <node name="tf_leftwheel" pkg="tf" type="static_transform_publisher" args="-0.001 0.116 -0.012  0 0 0  base_link left_wheel 40"/>-->
+
+  <!-- Thêm TF giữa linkphutren và right
+  <node name="tf_rightwheel" pkg="tf" type="static_transform_publisher" args="0.001 -0.116 -0.012  0 0 0  base_link right_wheel 40"/>-->
+
+  <!-- Load bản đồ -->
+  <arg name="map_file" default="/home/nttien/catkin_ws/src/mobile/map/my_map.yaml"/>
+  <node pkg="map_server" type="map_server" name="map_server" args="$(arg map_file)"/>
+
+</launch>
