@@ -20,6 +20,8 @@ ROS2 nodes:
 - controller_node
 - slam_toolbox
 - nav2
+- 
+Extended Kalman Filter - EKF
 
 ## Hardware
 
