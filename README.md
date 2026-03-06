@@ -36,13 +36,11 @@ Extended Kalman Filter - EKF
 
 Gazebo + RViz
 
-<img width="520" height="795" alt="image" src="https://github.com/user-attachments/assets/6200ca25-d6a0-4709-a0b9-946a5638a6ab" />
-
 ## Run
-
 ```bash
 colcon build
 source install/setup.bash
 ros2 launch mobile nav2.launch.py
+```
 
-
+<img width="520" height="795" alt="image" src="https://github.com/user-attachments/assets/6200ca25-d6a0-4709-a0b9-946a5638a6ab" />
